@@ -20,7 +20,11 @@ export function useFuzzy<T>(
     return new Fuse(data, { ...defaultOptions, ...options });
   }, [data, options]);
   const result: T[] = keyword
-    ? (searcher.search(keyword) || []).map(r => r.item)
+    ? (searcher.search(keyword) || []).map(r => ({
+        ...r.item,
+        matches: r.matches
+      })
+    )
     : data;
 
   return {
