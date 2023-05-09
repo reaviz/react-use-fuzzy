@@ -21,7 +21,6 @@ examples
 .gitignore
 
 # TODO: Remove .npmignore and use files property of package.json instead
-lib/*.map
 lib/*.tsbuildinfo
 .prettierrc                   
 nodemon.json                  
